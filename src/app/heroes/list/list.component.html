@@ -1,0 +1,21 @@
+<p>Listado de Heroes</p>
+
+<ng-template #nothingWasDeleted>
+    <h3>No ha borrado nada</h3>
+</ng-template>
+<div *ngIf="heroeBorrado ; else nothingWasDeleted">
+    <h3 *ngIf="heroeBorrado"  >Héroe borrado <small class="text-danger"> {{ heroeBorrado }}</small></h3>
+</div>
+
+
+
+<br>
+<button *ngIf="heroeNames.length > 0" class="btn btn-outline-danger" (click)="borrarUltimoHeroe()">
+    Borrar el ultimo Heroe
+</button>
+
+<ng-template></ng-template>
+
+<ul class="mt-2 list-group">
+    <li *ngFor="let name of heroeNames"  class="list-group-item">{{ name }}</li>
+</ul>
